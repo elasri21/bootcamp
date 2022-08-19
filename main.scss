@@ -1,0 +1,159 @@
+// variables
+$family: 'Inter', sans-serif;
+//colors
+$main-bg: hsl(240, 18%, 77%);
+$white: hsl(0, 0%, 100%);
+$text-color: hsl(240, 38%, 20%);
+$attr-color: hsl(228, 45%, 44%);
+//break point
+$small: '(min-width: 768px)';
+$mobile: '(max-width: 767px)';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $family;
+    font-size: 32px;
+    @media #{$small} {
+        height: 100vh;
+    }
+
+}
+#page {
+    background-color: $main-bg;
+    @media #{$small} {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #container {
+            width: 80%;
+            .person {
+                justify-content: center;
+                align-items: center;
+                & > div {
+                    width: 50%;
+                }
+                .info {
+                    z-index: 111;
+                    .text {
+                        width: 120%;
+                        overflow: visible;
+                        text-align: left !important;
+                    }
+                    .name {
+                        text-align: left !important;
+                    }
+                }
+            }
+            .buttons {
+                bottom: 15px;
+                left: 53%;
+            }
+        }
+
+    }
+    @media #{$mobile} {
+        #container {
+            .person {
+                flex-direction: column;
+                .info {
+                    order: 2;
+                    z-index: unset;
+                }
+                .image {
+                    order: 1;
+                    width: 300px;
+                    height: 300px;
+                    margin: 0 auto;
+                    margin-bottom: 100px;
+                }
+            }
+            .buttons {
+                left: 50%;
+                top: 340px;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    #container {
+        position: relative;
+        background-color: $white;
+        padding: 40px;
+        .person {
+            display: flex;
+            &.hide {
+                display: none;
+            }
+            .info {
+                .text {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: $text-color;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                .name {
+                    font-size: 10px;
+                    font-weight: 300;
+                    color: $main-bg;
+                    text-align: center;
+                    span {
+                        font-weight: 700;
+                        color: $text-color;
+                        text-transform: capitalize;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .image {
+                border-radius: 4px;
+                img {
+                    width: 100%;
+                    border-radius: 4px;
+                }
+            }
+        }
+        .buttons {
+            width: 60px;
+            height: auto;
+            padding: 10px 15px;
+            text-align: center;
+            background-color: $white;
+            color: $main-bg;
+            border-radius: 20px;
+            border: 1px solid $main-bg;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button {
+                border: none;
+                outline: none;
+                background: none;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                i {
+                    display: inline-block;
+                    color: $main-bg;
+                    &:first-child {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 10px;
+    a {
+        color: $attr-color;
+    }
+}
+

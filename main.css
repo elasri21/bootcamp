@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+}
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}
+
+#page {
+  background-color: #babacf;
+}
+@media (min-width: 768px) {
+  #page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #page #container {
+    width: 80%;
+  }
+  #page #container .person {
+    justify-content: center;
+    align-items: center;
+  }
+  #page #container .person > div {
+    width: 50%;
+  }
+  #page #container .person .info {
+    z-index: 111;
+  }
+  #page #container .person .info .text {
+    width: 120%;
+    overflow: visible;
+    text-align: left !important;
+  }
+  #page #container .person .info .name {
+    text-align: left !important;
+  }
+  #page #container .buttons {
+    bottom: 15px;
+    left: 53%;
+  }
+}
+@media (max-width: 767px) {
+  #page #container .person {
+    flex-direction: column;
+  }
+  #page #container .person .info {
+    order: 2;
+    z-index: unset;
+  }
+  #page #container .person .image {
+    order: 1;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  #page #container .buttons {
+    left: 50%;
+    top: 340px;
+    transform: translate(-50%, -50%);
+  }
+}
+#page #container {
+  position: relative;
+  background-color: white;
+  padding: 40px;
+}
+#page #container .person {
+  display: flex;
+}
+#page #container .person.hide {
+  display: none;
+}
+#page #container .person .info .text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202046;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#page #container .person .info .name {
+  font-size: 10px;
+  font-weight: 300;
+  color: #babacf;
+  text-align: center;
+}
+#page #container .person .info .name span {
+  font-weight: 700;
+  color: #202046;
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+#page #container .person .image {
+  border-radius: 4px;
+}
+#page #container .person .image img {
+  width: 100%;
+  border-radius: 4px;
+}
+#page #container .buttons {
+  width: 60px;
+  height: auto;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: white;
+  color: #babacf;
+  border-radius: 20px;
+  border: 1px solid #babacf;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#page #container .buttons button {
+  border: none;
+  outline: none;
+  background: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+#page #container .buttons button i {
+  display: inline-block;
+  color: #babacf;
+}
+#page #container .buttons button i:first-child {
+  margin-right: 10px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=main.css.map */
